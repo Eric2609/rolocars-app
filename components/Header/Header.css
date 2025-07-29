@@ -1,0 +1,36 @@
+.Encabezado{
+    width:100vw;
+    height:50px;
+    background:hsl(249, 78%, 26%);
+    color:white;
+    font-size:30px;
+    padding-top:3px;
+    padding-left:30px;
+}
+.encabezado strong{
+    font-family: 'Montserrat', sans-serif;
+}
+.sesion{
+    width:110px;
+    height:30px;
+    color:red;
+    font-size:18px;
+    position:absolute;
+    right:2px;
+    top:10px;
+    background:yellow;
+}
+.icono{
+    width:25px;
+    height:25px;
+    position:absolute;
+    right:45px;
+    top:10px;   
+}
+.icono2{
+    width:25px;
+    height:25px;
+    position:absolute;
+    right:10px;
+    top:10px
+}

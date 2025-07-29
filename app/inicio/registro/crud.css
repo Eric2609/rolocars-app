@@ -1,0 +1,47 @@
+.contend{
+    display: flex;
+    position: relative;
+    top:20px;
+    padding:20px;
+}
+.contenedor{
+    width:80vw;
+    height:400px;
+    margin-right:10px;
+    background:white;
+    color:white;
+}
+.Form_Contend{
+    width:30vw;
+    height:400px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:hsla(183, 100%, 100%, 0.83);
+    margin-top:10vh;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:auto;
+}
+.label{
+    color:black;
+}
+.Button_Guardar{
+    border-radius:5px;
+    background:green;
+    color:white;
+    padding:5px 11px;
+    margin-top:20px;
+    margin-right:18px;
+}
+.Button_Cancelar{
+    border-radius:5px;
+    background:red;
+    color:white;
+    padding:5px 11px;
+    margin-top:20px;
+}
+.contenedor_Crear{
+    width:100vw;
+    height:100vh;
+}

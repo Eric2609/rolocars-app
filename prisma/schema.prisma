@@ -1,0 +1,57 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Producto {
+  Id_Producto   Int       @id @default(autoincrement())
+  Producto      String?
+  Descripcion   String?
+  Precio_Compra Int
+  Precio_Venta  Int
+  Stock         Int
+  Venta1        Venta1[]  // Relación uno a muchos con Venta1
+}
+
+model User {
+  id_User  Int        @id @default(autoincrement())
+  User     String
+  Password String
+  Rol      String
+  Compra1  Compra1[]  // Relación uno a muchos con Compra1
+  Venta1   Venta1[]   // Relación uno a muchos con Venta1
+}
+
+model Venta1 {
+  id_Venta      Int       @id @default(autoincrement())
+  id_Producto   Int
+  id_Usuario    Int
+  producto      Producto  @relation(fields: [id_Producto], references: [Id_Producto])
+  usuario       User      @relation(fields: [id_Usuario], references: [id_User])
+  precio_Costo  String
+  precio_Venta  String
+  cantidad      Int
+  fecha         DateTime  // CAMBIO: una sola fecha
+  total         Int
+}
+
+model Compra1 {
+  id_Compra    Int       @id @default(autoincrement())
+  id_Usuario   Int
+  Usuario      User      @relation(fields: [id_Usuario], references: [id_User])
+  Producto     String
+  Descripcion  String
+  Precio_Costo Int
+  Precio_Venta Int
+  Stock        Int
+  Fecha        DateTime  // CAMBIO: una sola fecha
+  Total        Int
+}
+

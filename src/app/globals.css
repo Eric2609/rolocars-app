@@ -25,3 +25,288 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+.fondo{
+  background:hsl(227, 1%, 90%);
+}
+/* css inicio */
+.container_search{
+  width:100vw;
+}
+
+.search{
+  border-radius:5px;
+  width:80vw;
+  padding:5px 15px;
+  margin-left:30px;
+  margin-right:30px;
+}
+
+/* Contenedor principal centrado */
+.contenedor {
+  display: flex;
+  justify-content: center;
+  width:100vw;
+}
+
+/* Contenedor de la base de datos (tabla) */
+.contenedor_BBDD {
+  width: 90vw;                /* ✅ más margen para evitar overflow horizontal */
+  min-height: 300px;
+           /* ✅ fondo claro explícito */
+  margin-top: 20px;
+  overflow-x: auto;           /* ✅ scroll horizontal si se requiere */
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  position: relative;
+}
+
+/* Tabla */
+
+.contenedor_table {
+  width: 100%;
+  height:65vh;
+  border-collapse: collapse;
+  table-layout: fixed; /* ✅ evita que se deforme */
+  min-width: 700px;    /* ✅ define ancho mínimo estable */
+}
+
+
+
+/* Celdas y encabezados */
+.contenedor_table th,
+.contenedor_table td {
+  padding: 8px;
+  border: 1px solid #ddd;
+  text-align: center;
+    color: black;
+}
+
+/* Opcional: para visualizar bien la tabla durante pruebas */
+
+/* Scrollbar personalizado opcional */
+.contenedor_BBDD::-webkit-scrollbar {
+  width: 12px;
+}
+
+.contenedor_BBDD::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.contenedor_BBDD::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.contenedor_BBDD::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.alert {
+  width: 40vw;
+  height: 20vh;
+  background-color: hsl(170, 16%, 82%);
+  padding: 15px;
+  border: 2px solid black;
+  border-radius: 5px;
+  position: absolute;
+  top: 40vh;
+  left: 30vw;
+  right: 30vw;
+  bottom: 40vh;
+  text-align: center;
+  padding-top: 5vh;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* evita que se desborde el botón */
+}
+
+.alert p {
+  flex: 1;
+  overflow-y: auto; /* ✅ scroll vertical */
+  padding: 10px;
+  text-align: left; /* mejor lectura si es texto largo */
+}
+
+.alert p::-webkit-scrollbar {
+  width: 6px;
+}
+
+.alert p::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 5px;
+}
+
+.alert button{
+  width:30px;
+  height:25px;
+  background-color:red;
+  color: white;
+  border-radius: 3px;
+  position:absolute;
+  top:1vh;
+  right:1vw;
+}
+
+.tr{
+  border-bottom:1px solid gray;
+}
+table tbody tr td {
+  text-align:center;
+}
+.vender{
+  color:black
+}
+.vender:hover{
+  color:blue;
+}
+
+
+.res_busqueda {
+  background-color: white;
+  width: 140px;
+  height: 200px;
+  padding: 15px;
+  border: 2px solid gray;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+
+
+
+.table {
+  width:80vw
+}
+.table thead tr th{
+  padding:5px
+}
+
+.tr{
+  border-bottom:1px solid gray;
+}
+
+
+
+
+
+
+.container_crud{
+  position:absolute;
+  top:105px;
+  right:515px;
+}
+.Crud{
+  color:white;
+  text-decoration:none;
+  padding:5px 15px;
+  margin-left:20px;
+}
+.Crud:hover{
+  font-size:18px
+}
+
+.Buscar{
+  border-radius:5px;
+  background: hsl(223, 73%, 25%);
+  color:white;
+  padding:5px 15px;
+  margin-right:15px;
+}
+.Buscar:hover{
+  background:hsl(223, 73%, 43%);
+}
+
+.login_inicio{
+  border-radius:5px;
+  background:hsl(223, 73%, 25%);
+  color:white;
+  padding:5px 15px;
+  margin:5px;
+}
+
+.login_inicio:hover{
+  background:hsl(223, 78%, 20%);
+  color:white;
+  padding:6px 16px;
+  margin:5px; 
+  font-size:16px;
+}
+/*--------------------------------------------------------*/
+
+/*css login  --------------------------------------------------------------*/
+.login{
+  width:400px;
+  height:250px;
+  background-color: hsl(223, 73%, 43%);
+  margin-top:30vh;
+  opacity: 0.6;
+  display:flex;
+  justify-content:center;
+  border-radius:15px;
+  color:white
+}
+
+form p {
+  font-size:30px;
+  text-align: center;
+  color:white;
+  border-bottom:2px solid white
+}
+.input_login{
+  border-bottom:2px solid white;
+  margin-left:20px;
+  background:transparent;
+}
+.input_login1{
+  border-bottom:2px solid white;
+  margin-left:60px;
+  background:transparent;
+}
+.input_login2{
+  border-bottom:2px solid white;
+  margin-left:66px;
+  background:transparent;
+  width:180px;
+  color: gray;
+}
+
+.form_text{
+  color: white;
+}
+/*----------------------------------------------------*/
+.warning-modal{
+  background:white;
+  width:30vw;
+  height:28vh;
+  position:absolute;
+  top:30vh;
+  left:35vw;
+  border-radius:15px
+}
+
+.warning-modal p{
+  text-align:center;
+  color:black;
+  margin-top:40px
+}
+.warning-modal input{
+  background-color:transparent;
+  border-bottom:2px solid hsl(223, 78%, 20%);
+  margin-left:35%;
+  margin-top:10%;
+
+}
+.warning-modal button{
+  background:red;
+  color:white;
+  padding:1px 5px;
+  border-radius:3px;
+  position:absolute;
+  right:10px;
+  top:10px
+
+}
+

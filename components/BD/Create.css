@@ -1,0 +1,69 @@
+//clase en tabla BD
+.nav{
+  width:100vw;
+  height:40px;
+  background:yellow;
+}
+.nave{
+  background:white;
+  width:120px;
+  height:25px;
+  text-align:center;
+  border-bottom:2px solid gray;
+}
+.button_Eliminar{
+  margin-left:5px;
+  color:red;
+  padding:1px 3px;
+  margin:1px 5px
+}
+.button_Delete{
+    margin-left:5px;
+    color:green;
+    padding:1px 3px;
+    margin:1px 5px
+  }
+.button_New{
+  background:green;
+  border-radius:5px ;
+  color:white;
+  padding:1px 3px;
+  margin:3px
+}
+.contenedor_Form{
+    width:300px;
+    margin:5px 20px;
+    padding:15px;
+    position:absolute;
+    right:10px;
+  }
+.Table_BD{
+    background:white;
+    width:70vw;
+    height:82vh;
+  }
+.table{
+  width:70vw;
+  height:82vh;
+}
+.Title_Form{
+    color:white;
+    fon-size:20px;
+    text-align: center;
+    border-bottom:2px solid black;
+  }
+.input_Form{
+    display:flex;
+    justify-content:flex-end;
+  }
+.label{color:white;}
+
+.contenedor_Crud{
+  margin:5px 20px;
+}
+.tr{
+  border-bottom:1px solid gray;
+}
+.Table_BD table thead tr th{
+  spacing:8px
+}

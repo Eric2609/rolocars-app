@@ -1,0 +1,155 @@
+.Contenedor_Calculo{
+    width:90vw;
+    height:20vh;
+    margin-top:auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    padding:2px 15px;
+    background-color: white; 
+    position: relative;
+    top: 25px;
+}
+.img{
+    width: 100px;
+    height: 80px;
+}
+
+.Calculo{
+    border-radius:5px;
+    background:hsl(249, 78%, 26%);
+    padding:5px 15px;
+    color:white;
+    width: 180px;
+    margin-top: 10px;
+}
+.Cancelar{
+    border-radius:5px;
+    background:red;
+    padding:5px 15px;
+    color:white;
+    width: 180px;
+    margin-top: 5px;
+}
+
+
+.Contenedor_Cal{
+    width:85vw;
+    height:30px;
+    display:flex;
+    margin-top: 20px;
+}
+.neto{
+    position: absolute;
+    left: 140px;
+    top: 15px;
+    border-left: 2px solid hsl(249, 78%, 26%);
+}
+.contenedor_data{
+    border-left: 2px solid hsl(249, 78%, 26%);
+    margin-left: 10px;  
+    margin-right: 70px;
+    height:50px
+
+}
+.datos{
+    margin-left:15px;
+    color:black;
+}
+.datos_input{
+    margin-left:15px;
+    width:80px;
+    background-color: transparent;
+    color: gray
+}
+.formingresos{
+    width: 15vw;
+    position: absolute;
+    right: 20px;
+    top: 5px;
+}
+.datos_inputs{
+    width: 180px;
+    background-color: transparent;
+    color: gray; 
+    
+}
+
+.Contend_BBDD{
+    width:100vw;
+    margin-top:40px;
+    display:flex;
+    padding-left: 4vw;
+    padding-right: 5vw;
+}
+/*
+.BD_compras{
+    width: 100vw;
+    height:50vh;
+    margin-left:20px;
+    border: 1px solid hsl(254, 49%, 8%);
+    background:white;
+    overflow-y: auto;
+    overflow-x:hidden;
+}*/
+/*
+.table{
+    width:46vw;
+    height:50vh;
+    background-color: white;
+}
+.table {
+    padding: 5px;
+    width: 99%;
+    table-layout: fixed; 
+    border-collapse: collapse; 
+    overflow: hidden; 
+  }*/
+
+  .tbody {
+    max-height: 400px; 
+    overflow-y: auto; 
+  }
+
+.tamaño{
+    font-size: 16px;
+} 
+
+.td {
+    text-align:center;
+    border-radius:1px solid black;
+    margin-right:10px;
+    margin-left:10px 
+}
+
+
+
+.BD_compras {
+    width:100vw;
+  height: 50vh;
+  overflow-y: auto;
+    margin-left:20px;
+    border: 1px solid hsl(254, 49%, 8%);
+    background:white;
+}
+
+
+
+
+
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.thead {
+  position: sticky;
+  top: 0;
+  background-color: #f0f0f0;
+  z-index: 2;
+  text-align: center;
+  padding: 5px;
+}
+
+

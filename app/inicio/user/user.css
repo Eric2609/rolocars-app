@@ -1,0 +1,71 @@
+.contenedor{
+    margin-top:5vh;
+}
+.atras{
+    background:white;
+    padding:3px 15px;
+    border-bottom:2px solid gray;
+    position:absolute;
+    left:2%;
+    top:10%
+}
+
+.Table_Users{
+    width:40vw;
+    height:60vh;
+    background:white;
+    margin-left:20px;
+}
+.contend_Users{
+    width:40vw;
+    height:60vh;
+}
+.cont_form{
+    width:250px;
+}
+.label{
+    color:gray;
+}
+.button{
+    background:hsl(223, 78%, 20%);
+    color:white;
+    border-radius:5px;
+    padding:2px 5px;
+    margin-left:30%;
+    margin-top:10px;
+}
+.text{
+    position:absolute;
+    top:30%;
+    left:30%;}
+.confirmation{
+    position:absolute;
+    top:40%;
+    left:40%;
+    border-bottom:1px solid hsl(223, 78%, 20%);
+}
+.modal{
+    width:60vw;
+    height:40vh;
+    background:white;
+    position:absolute;
+    top:20vh;
+    left:20vw;
+    border-radius:10px;
+    border: 1px solid gray;
+}
+.cancel{
+    background:red;
+    color:white;
+    border-radius:2px;
+    padding:3px 6px;
+    position:absolute;
+    top:5%;
+    right:2%;
+}
+form p {
+    color:gray
+}
+.input_login1{
+    color:gray
+}
