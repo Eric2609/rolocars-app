@@ -84,7 +84,7 @@ body {
 
 /* Opcional: para visualizar bien la tabla durante pruebas */
 
-/* Scrollbar personalizado opcional */
+/* Scrollbar personalizado opcional */+
 .contenedor_BBDD::-webkit-scrollbar {
   width: 12px;
 }
@@ -160,7 +160,7 @@ table tbody tr td {
   color:black
 }
 .vender:hover{
-  color:blue;
+  color:hsl(249, 78%, 26%);
 }
 
 
@@ -216,7 +216,7 @@ table tbody tr td {
   margin-right:15px;
 }
 .Buscar:hover{
-  background:hsl(223, 73%, 43%);
+  background:hsl(249, 78%, 26%);
 }
 
 .login_inicio{
@@ -308,5 +308,268 @@ form p {
   right:10px;
   top:10px
 
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  .login {
+    width: 90%;
+    height: auto;
+    margin-top: 15vh;
+    padding: 20px;
+    opacity: 0.95;
+    flex-direction: column;
+  }
+
+  form p {
+    font-size: 24px;
+  }
+
+  /* Inputs genéricos para login y register */
+  .input_login,
+  .input_login1,
+  .input_login2 {
+    width: 90% !important;
+    margin-left: 0 !important;
+    display: block;
+    margin: 10px auto;
+    font-size: 16px;
+  }
+
+  .login_inicio {
+    display: block;
+    width: 90%;
+    margin: 15px auto;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 16px;
+  }
+
+  .warning-modal {
+    width: 90% !important;
+    height: auto !important;
+    left: 5% !important;
+    top: 20vh !important;
+    padding: 15px !important;
+    border-radius: 15px;
+  }
+
+  .warning-modal p {
+    margin-top: 20px !important;
+    font-size: 18px;
+  }
+
+  .warning-modal input {
+    margin-left: 0 !important;
+    display: block !important;
+    width: 80% !important;
+    margin-top: 15px !important;
+  }
+
+  .warning-modal button {
+    position: absolute !important;
+    right: 10px !important;
+    top: 10px !important;
+  }
+
+  .contenedor_BBDD {
+    width: 98vw;
+    margin: 10px auto;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .contenedor_table {
+    min-width: 500px;
+    height: 40vh;
+    table-layout: auto; /* para que se adapte mejor */
+  }
+
+  .contenedor_table th,
+  .contenedor_table td {
+    font-size: 12px;
+    padding: 6px 8px;
+    white-space: nowrap;
+  }
+  .container_search {
+    width: 95vw;
+    padding: 0 10px;
+    margin: 0 auto;
+  }
+
+  .container_search form {
+    display: flex;
+    justify-content: center;
+    gap: 6px; 
+    flex-wrap: nowrap;
+  }
+
+  .search {
+    width: 100%;         
+    font-size: 14px;    
+    padding: 6px 10px;   
+    margin: 0;
+  }
+
+  .Buscar {
+    padding: 6px 10px;   
+    font-size: 10px;
+    margin: 0;
+    cursor: pointer;
+  }
+
+}
+
+
+
+@media (max-width: 480px) {
+  .login {
+    width: 95%;
+    margin-top: 12vh;
+    padding: 15px;
+  }
+
+  form p {
+    font-size: 20px;
+  }
+
+  .input_login,
+  .input_login1,
+  .input_login2 {
+    width: 100% !important;
+    font-size: 14px;
+  }
+
+  .login_inicio {
+    width: 100%;
+    font-size: 14px;
+    padding: 8px 0;
+  }
+
+  .warning-modal {
+    width: 95% !important;
+    left: 2.5% !important;
+    top: 15vh !important;
+    padding: 10px !important;
+  }
+
+  .warning-modal p {
+    font-size: 16px !important;
+  }
+
+  .warning-modal input {
+    width: 100% !important;
+  }
+
+  .contenedor_BBDD {
+    width: 98vw !important;
+     height: 50vh;
+    min-height: 200px;
+    margin-top: 10px;
+    overflow-x: scroll;
+    overflow-y:scroll;
+  }
+
+  .contenedor_table {
+    min-width: 500px; /* Permite scroll horizontal en tabla */
+    height: 50vh;
+  }
+
+  .alert {
+    width: 90vw !important;
+    height: auto !important;
+    top: 20vh !important;
+    left: 5vw !important;
+    right: 5vw !important;
+    bottom: auto !important;
+    padding: 15px !important;
+    font-size: 14px;
+  }
+
+  .alert p {
+    font-size: 13px !important;
+  }
+
+  .alert button {
+    width: 25px !important;
+    height: 25px !important;
+    font-size: 14px !important;
+  }
+
+  .container_search {
+    width: 98vw;
+    padding: 0 5px;
+  }
+
+  .container_search form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: stretch;
+  }
+
+  .search {
+    width: 100vw;
+    font-size: 10px; /* aún más pequeño */
+    padding: 8px 4px;
+    margin: 0;
+  }
+
+  .Buscar {
+    width: 100%;
+    padding: 4px 4px;
+    font-size: 8px;
+    margin: 0;
+    cursor: pointer;
+  }
+}
+
+
+
+
+
+@media (max-width: 1024px) {
+  .container_search {
+    width: 95vw;
+    padding: 0 10px;
+  }
+
+  .search {
+    width: 70vw !important;
+    margin-left: 0 !important;
+    margin-right: 10px !important;
+    padding: 8px 12px;
+    font-size: 16px;
+  }
+
+  .Buscar {
+    padding: 8px 12px;
+    font-size: 16px;
+    margin-right: 5px;
+  }
+
+  .contenedor_BBDD {
+    width: 95vw !important;
+    min-height: 250px;
+    margin-top: 15px;
+  }
+
+  .contenedor_table {
+    min-width: 600px; /* Menor min-width para tablets */
+    height: 50vh;
+  }
+
+  .alert {
+    width: 50vw !important;
+    height: 25vh !important;
+    top: 35vh !important;
+    left: 25vw !important;
+    right: 25vw !important;
+    bottom: auto !important;
+    padding-top: 3vh !important;
+  }
 }
 

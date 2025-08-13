@@ -71,8 +71,8 @@
     background-color: white;
     position: relative;
     top: 25px;
-
 }
+
 .contenedor_bus{
     width:90vw;
     height:10vh;
@@ -199,3 +199,152 @@
 table tbody tr td {
     text-align:center;
 }
+
+
+@media (max-width: 480px) {
+
+
+.contenedor_bus{
+    width:96vw;
+    height:11vh;
+    margin-top:auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    padding:2px 15px;
+    background-color: white; 
+    position: relative;
+    top: 0px;
+}
+.img{
+    width: 35px;
+    height:70px;
+}
+.label_busqueda{
+    margin-right:14px;
+    font-size:10px;
+}
+
+.form1{
+    width: 50vw;
+    height: 40px;
+    position:absolute;
+    display: flex;
+}
+
+.buscar{
+    background-color: transparent;
+    border-bottom: 1px solid hsl(223, 73%, 43%) ;
+    font-size:10px;
+}
+.contenedor_res0{
+    width:250px;
+    height: 25px;
+    border-left: 2px solid hsl(249, 78%, 26%);   
+    position:absolute;
+    top:-20px;
+    left:-65px;
+}
+
+.contenedor_res{
+    width:250px;
+    height: 25px;
+    border-left: 2px solid hsl(249, 78%, 26%);   
+    position:absolute;
+    top:7px;
+    left:-65px
+}
+
+.contenedor_res1{
+    width:250px;
+    height: 25px;
+    border-left: 2px solid hsl(249, 78%, 26%);
+    position:absolute;
+    top:35px;
+    left:-65px
+}
+
+
+.contend{
+    display: flex;
+    position: relative;
+    top:-40px;
+}
+
+.contenedor_Form{
+    width:300px;
+    padding-left:20vw
+}
+
+.label{
+    color:black;
+    font-size:11px;
+}
+
+.contenedor_Form{
+    width:315px;
+}
+.input_Form{
+    width:190px;
+    color:gray;
+    font-size:11px;
+}
+
+.button_crear{
+    border-radius:5px;
+    background: hsl(249, 78%, 26%);
+    color:white;
+    padding:5px 11px;
+    margin:3px;
+    font-size:10px
+}
+
+
+.Table_BD {
+    width: 94vw;
+    margin: 10px auto 0 auto;
+    height: auto; /* Evitar altura fija */
+    overflow-x: auto; /* Scroll horizontal */
+    overflow-y: auto;
+    position:absolute;
+    top:45vh
+}
+
+.contend_table {
+    width: max-content; /* Ajusta al contenido */
+    min-width: 100%; /* Ocupa al menos todo el ancho */
+    border-collapse: collapse;
+}
+
+.contend_table th,
+.contend_table td {
+    font-size: 10px; /* Texto más pequeño */
+    padding: 4px;
+    text-align: center;
+}
+
+.contend {
+    flex-direction: column; /* Apila formulario y tabla */
+    align-items: center;
+    gap: 10px;
+}
+
+.contenedor_busqueda{
+    width:90vw;
+    height:10vh;
+    margin-top:auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    padding:2px 15px;
+    background-color: white;
+    position: relative;
+    top: 0px;
+}
+
+}
+
+
+
+
+

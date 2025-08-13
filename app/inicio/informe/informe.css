@@ -153,3 +153,137 @@
 }
 
 
+/* --- Responsive para tabletas y celulares --- */
+@media (max-width: 768px) {
+  .Contenedor_Calculo {
+    width: 95vw;
+    height: auto;
+    padding: 10px;
+    top: 10px;
+    position: relative;
+  }
+
+  .img {
+    width: 80px;
+    height: 65px;
+  }
+
+  .Contenedor_Cal {
+    flex-direction: column;
+    height: auto;
+    margin-top: 15px;
+  }
+
+  .neto,
+  .contenedor_data {
+    border-left: none;
+    margin: 5px 0;
+  }
+
+  .datos_input {
+    width: 100%;
+    max-width: 120px;
+  }
+
+  .formingresos {
+    width: 100%;
+    position: static;
+    margin-top: 15px;
+  }
+
+  .datos_inputs {
+    width: 100%;
+    max-width: 180px;
+  }
+
+  .Calculo {
+    width: 100%;
+    max-width: 180px;
+    padding: 8px 0;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .Contenedor_Calculo {
+    width: 98vw;
+    padding: 8px;
+    top: 5px;
+  }
+
+  .img {
+    width: 50px;
+    height: 40px;
+  }
+
+  .Contenedor_Cal {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .neto,
+  .contenedor_data {
+    border-left: none;
+    margin: 5px 0;
+  }
+
+  .datos_input {
+    width: 100%;
+    max-width: 100px;
+    font-size: 10px;
+  }
+
+  .formingresos {
+    width: 100%;
+    position: static;
+    margin-top: 10px;
+  }
+  .datos{
+    font-size:10px;
+  }
+  .datos_inputs {
+    width: 100%;
+    max-width: 140px;
+    font-size: 12px;
+  }
+  .strong{
+    font-size:10px
+  }
+  .Calculo {
+    width: 93vw;
+    max-width: 93vw;
+    padding: 6px 0;
+    font-size: 12px;
+    display:block;
+  }
+
+
+ 
+
+
+  /* Tabla responsive */
+  .Contend_BBDD {
+    padding-left: 2vw;
+    padding-right: 2vw;
+    position:absolute;
+    top:52vh;
+  }
+
+  .BD_compras {
+    width: 100vw;
+    height:42vh;
+    overflow-x: auto;
+    border: none;
+    margin-left: 0;
+  }
+
+  table.table {
+    min-width: 400px; /* Para que haya scroll horizontal si no cabe */
+  }
+
+  .thead,
+  .td {
+    font-size: 12px;
+    padding: 3px 5px;
+  }
+}

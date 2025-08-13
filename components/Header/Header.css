@@ -34,3 +34,63 @@
     right:10px;
     top:10px
 }
+
+
+
+@media (max-width: 768px) {
+  .Encabezado {
+    font-size: 20px; /* Reducimos texto */
+    padding-left: 15px;
+    height: 60px; /* Un poco más alto para acomodar todo */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  /* Agrupamos los iconos para que no se superpongan */
+  .icono, .icono2 {
+    position: static;
+    margin-left: 10px;
+  }
+
+  /* Contenedor de iconos juntos */
+  .Encabezado div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+/* 📱 Móviles chicos */
+@media (max-width: 480px) {
+  .Encabezado {
+    font-size: 12px;
+    padding-left: 10px;
+    height: auto; /* Que crezca si el texto salta de línea */
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5px 10px;
+  }
+
+  /* Iconos abajo del título */
+  .Encabezado div {
+    margin-top: 5px;
+  }
+
+  .icono {
+    width:18px;
+    height: 18px;
+    position:absolute;
+    right:45px;
+    top:13px
+  }
+  .icono2 {
+    width:18px;
+    height: 18px;
+    position:absolute;
+    right:10px;
+    top:10px
+  }
+
+}

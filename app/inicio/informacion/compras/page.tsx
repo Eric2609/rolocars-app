@@ -419,7 +419,7 @@ function formatDateToLocalYYYYMMDD(date: Date): string {
                     <input  className='buscar' type="number" id='productId'name="productId"  onChange={buscar} placeholder='ID Compra' /> <br/>
                   </div>
 
-                  <div className='contenedor_res1'>
+                  <div className='contenedor_res'>
                     <label htmlFor=""> <strong className='label_busqueda'>Usuario : </strong></label>
                     {busquedaUser}
                   </div>
@@ -463,12 +463,10 @@ onChange={(e) =>
 
 
                   />
-                  <br />
                   <label className='label' htmlFor="">total</label>
                   <input className='input_Form' onChange={HandleChange} readOnly value={compra.Total} type="number" name="Total" placeholder="Total" />
-                  <br />
                   <div style={{ marginTop: "5px" }}>
-                  <button className='button_crear' onClick={addCompras}>Nuevo Compra</button>
+                  <button className='button_crear' onClick={addCompras}>Nueva Compra</button>
                   </div>
 
                   {/*<div style={{ marginTop: "5px" }}>

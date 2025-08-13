@@ -1,6 +1,10 @@
 .contenedor{
     margin-top:5vh;
 }
+.cont_form{
+    width:300px;
+    color:yellow;
+}
 .atras{
     background:white;
     padding:3px 15px;
@@ -20,15 +24,11 @@
     width:40vw;
     height:60vh;
 }
-.cont_form{
-    width:250px;
-}
-.label{
-    color:gray;
-}
+.label{color:gray;}
 .button{
     background:hsl(223, 78%, 20%);
     color:white;
+    width:150px;
     border-radius:5px;
     padding:2px 5px;
     margin-left:30%;
@@ -46,7 +46,7 @@
 }
 .modal{
     width:60vw;
-    height:40vh;
+    height:41vh;
     background:white;
     position:absolute;
     top:20vh;
@@ -63,9 +63,104 @@
     top:5%;
     right:2%;
 }
-form p {
-    color:gray
+form p {color:gray}
+.input_login{color:gray}
+.input_login1{color:gray}
+.button_Edit{color: hsl(249, 78%, 26%);}
+.button_Delete{color:red;}
+.tr{color:gray}
+
+
+@media (max-width: 768px) {
+  .contenedor {
+    display: flex;
+    flex-direction: column; /* Apilar formulario y tabla */
+    align-items: center;
+    gap: 15px;
+    margin-top: 2vh;
+  }
+
+  .cont_form {
+    width: 95vw; /* Ocupa casi todo el ancho */
+    margin: 0 auto;
+  }
+
+  .Table_Users {
+    width: 95vw;
+    height: auto;
+    margin: 0 auto;
+    overflow-x: auto; /* Permite scroll horizontal */
+  }
+
+  .contend_Users {
+    width: 600px; /* ancho mínimo para la tabla */
+  }
+
+  /* Inputs y botones más amigables en móvil */
+  .input_login,
+  .input_login1 {
+    width: 100%;
+    font-size: 14px;
+    padding: 8px;
+    color:gray;
+  }
+
+  .button,
+  .button_Edit,
+  .button_Delete {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    margin: 5px 0;
+  }
+
+  /* Modal adaptado */
+  .modal {
+    width: 90vw;
+    height: auto;
+    left: 5vw;
+    top: 15vh;
+    padding: 15px;
+  }
+
+  .text {
+    position: static;
+    text-align: center;
+  }
+
+  .confirmation {
+    position: static;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .cancel {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
 }
-.input_login1{
-    color:gray
+
+/* 📱 Vista muy pequeña: menos de 480px */
+@media (max-width: 480px) {
+  .input_login,
+  .input_login1 {
+    font-size: 12px;
+    padding: 6px;
+    colorr:gray;
+  }
+
+  .button,
+  .button_Edit,
+  .button_Delete {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .contend_Users tr,
+   .contend_Users td,{
+    width: 500px; /* Mantener tabla visible con scroll */
+    font-size:10px
+  }
 }
+

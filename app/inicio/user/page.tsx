@@ -126,16 +126,13 @@ const ResetUsers = () => {
   return (
     <div className='contenedor'>
         <div className='cont_form'>
-        <Link href="/inicio" className='atras'>
-          Inicio
-        </Link>  
           <form>
             <br/>
             <p><strong>ROLO Autorepuestos</strong></p>
             <label className='label' htmlFor=''> <strong>User</strong> </label><br/>
             <input type='text' name='User' onChange={handleChange}  value={user.User} className='input_login' placeholder='Usuario'/><br />
             <label className='label' htmlFor=''> <strong>Pass</strong> </label><br/>
-            <input type='password' name='Password' onChange={handleChange} value={user.Password} className='input_login' placeholder='Contraseña' /><br />
+            <input type='Text' name='Password' onChange={handleChange} value={user.Password} className='input_login' placeholder='Contraseña' /><br />
             <label className='label' htmlFor=''> <strong>Rol</strong> </label><br/>
             <select name="Rol"  onChange={handleChange} value={user.Rol} className='input_login1'><br/>                                                            
                 <option value="">selecione un Rol</option>
@@ -145,6 +142,11 @@ const ResetUsers = () => {
             </select><br/>
             <div style={{ marginTop: "5px" }}>
                 <button className='button' onClick={UpdateUsers}>Editar User</button>
+                <button className='button'>   
+                  <Link href="/inicio">
+                    Cancel
+                  </Link>        
+                </button>
             </div>
           </form>
         </div>

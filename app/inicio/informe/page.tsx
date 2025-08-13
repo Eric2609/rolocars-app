@@ -142,7 +142,7 @@ const calcularPorDia = () => {
           </label>
           <br />
           <input className="datos_input" type="text" value={costoInventario.toFixed(2)} readOnly />
-          <strong>BS</strong>
+          <strong className='strong'>BS</strong>
         </div>
 
         <div className="Contenedor_Cal">
@@ -153,7 +153,7 @@ const calcularPorDia = () => {
             </label>{' '}
             <br />
             <input className="datos_input" type="text" value={totalIngresos.toFixed(2)} readOnly />
-            <strong>BS</strong>
+            <strong className='strong'>BS</strong>
             <br />
           </div>
           <div className=" contenedor_data">
@@ -163,17 +163,17 @@ const calcularPorDia = () => {
             </label>
             <br />
             <input className="datos_input" type="text" value={totalEgresos.toFixed(2)} readOnly />
-            <strong>BS</strong>
+            <strong className='strong'>BS</strong>
             <br />
           </div>
           <div className=" contenedor_data">
             <label className="datos" htmlFor="">
               {' '}
-              <strong>Total venta bruto</strong>{' '}
+              <strong className='strong'>Total venta bruto</strong>{' '}
             </label>
             <br />
             <input className="datos_input" type="text" value={totalVentas.toFixed(2)} readOnly />
-            <strong>BS</strong>
+            <strong className='strong'>BS</strong>
             <br />
           </div>
         </div>
