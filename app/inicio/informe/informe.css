@@ -245,13 +245,14 @@
     width: 100%;
     max-width: 140px;
     font-size: 12px;
+    border:2px solid gray;
   }
   .strong{
     font-size:10px
   }
   .Calculo {
     width: 100vw;
-    max-width: 180px;
+    max-width: 100vw;
     padding: 6px 0;
     font-size: 12px;
     display:block;
