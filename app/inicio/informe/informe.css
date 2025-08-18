@@ -225,13 +225,12 @@
   .contenedor_data {
     border-left: none;
     margin: 2px 0;
-    background-color:yellow;
   }
 
   .datos_input {
     width: 100%;
     max-width: 100px;
-    font-size: 9px;
+    font-size: 10px;
   }
 
   .formingresos {
@@ -251,23 +250,19 @@
     font-size:10px
   }
   .Calculo {
-    width: 40vw;
-    max-width: 100px;
+    width: 100vw;
+    max-width: 180px;
     padding: 6px 0;
     font-size: 12px;
-    display:inline-block;
+    display:block;
   }
-
-
- 
-
 
   /* Tabla responsive */
   .Contend_BBDD {
     padding-left: 2vw;
     padding-right: 2vw;
     position:absolute;
-    top:75vh;
+    top:55vh;
   }
 
   .BD_compras {
