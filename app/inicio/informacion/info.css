@@ -245,6 +245,7 @@ table tbody tr td {
     top:-20px;
     left:-65px;
     color:black;
+    z-index:9999:
 }
 
 .contenedor_res{
@@ -254,7 +255,8 @@ table tbody tr td {
     position:absolute;
     top:7px;
     left:-65px;
-    color:black
+    color:black;
+    z-index:9999;
 }
 
 .contenedor_res1{
@@ -265,6 +267,7 @@ table tbody tr td {
     top:35px;
     left:-65px
     color:balck;
+    z-index:9999;
 }
 
 
