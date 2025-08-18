@@ -222,7 +222,7 @@ table tbody tr td {
 }
 .label_busqueda{
     margin-right:14px;
-    font-size:10px;
+    font-size:8px;
 }
 
 .form1{
@@ -348,9 +348,7 @@ table tbody tr td {
     position: relative;
     top: 0px;
 }
-.label_busqueda{
-    font-size:10px
-}
+
 
 }
 
