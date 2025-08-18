@@ -321,6 +321,23 @@ else if (e.target.name === 'id_Usuario') {
 }
 
 
+  else if (e.target.name === 'usuarioInput') {
+    const typedValue = value.toString();
+    const selectedUser = users.find(u => u.User.toLowerCase() === typedValue.toLowerCase());
+
+    if (selectedUser) {
+      setUser(selectedUser);
+      setVenta(prev => ({
+        ...prev,
+        id_Usuario: selectedUser.id_User
+      }));
+    } else {
+      setUser(prev => ({
+        ...prev,
+        User: typedValue
+      }));
+    }
+  }
 
 
 
@@ -441,12 +458,24 @@ const lastRowStyle = {
               ))}
             </select>
             <label htmlFor="id_Usuario" className='label'>Usuario</label>
-            <select className='input_Form' name="id_Usuario" onChange={HandleChange} value={venta.id_Usuario}>
+              
+              {/* <select className='input_Form' name="id_Usuario" onChange={HandleChange} value={venta.id_Usuario}>
               <option value="">Selecciona un usuario</option>
                 {users.map((user: User) => (
                 <option key={user.id_User} value={user.id_User}>{user.User}</option>
                 ))}
-            </select>
+            </select>*/}
+
+              <input
+                className='input_Form'
+                type="text"
+                name="usuarioInput"
+                placeholder="Escriba el usuario"
+                value={user.User}
+                onChange={HandleChange}
+              />
+
+              
             <label className='label' htmlFor="precio_Costo">Precio compra</label><br/>
             <input className='input_Form' onChange={HandleChange} value={venta.precio_Costo} type="number" name="precio_Costo" placeholder="Precio_Compra" /> 
             <label className='label' htmlFor="">Precio venta</label>
