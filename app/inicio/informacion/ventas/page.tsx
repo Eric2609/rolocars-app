@@ -226,6 +226,14 @@ const ResetVentas = () => {
     fecha: '', // String vacío para el campo tipo date
     total: 0,
   });
+
+  setUser({
+    id_User: 0,
+    User: '',
+    Password: '',
+    Rol: '',
+  });
+  
 };
 
 
