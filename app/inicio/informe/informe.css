@@ -252,8 +252,8 @@
   }
   .Calculo {
     width: 100vw;
-    max-width: 93vw;
-    padding: 6px 0;
+    max-width: 94vw;
+    padding: 8px 0;
     font-size: 12px;
     display:block;
   }
@@ -263,12 +263,12 @@
     padding-left: 2vw;
     padding-right: 2vw;
     position:absolute;
-    top:45vh;
+    top:50vh;
   }
 
   .BD_compras {
     width: 100vw;
-    height:40vh;
+    height:35vh;
     overflow-x: auto;
     border: none;
     margin-left: 0;
