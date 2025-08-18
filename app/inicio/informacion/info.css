@@ -348,6 +348,9 @@ table tbody tr td {
     position: relative;
     top: 0px;
 }
+.label_busqueda{
+    margin-right:10px
+}
 
 }
 
