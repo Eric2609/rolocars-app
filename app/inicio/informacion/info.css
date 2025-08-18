@@ -313,7 +313,7 @@ table tbody tr td {
     overflow-x: auto; /* Scroll horizontal */
     overflow-y: auto;
     position:absolute;
-    top:45vh
+    top:48vh
 }
 
 .contend_table {
