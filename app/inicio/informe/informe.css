@@ -225,7 +225,7 @@
   .contenedor_data {
     border-left: none;
     margin: 2px 0;
-    background-color:red;
+    background-color:yellow;
   }
 
   .datos_input {
@@ -255,7 +255,7 @@
     max-width: 100px;
     padding: 6px 0;
     font-size: 12px;
-    display:inline;
+    display:inline-block;
   }
 
 
