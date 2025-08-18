@@ -224,13 +224,14 @@
   .neto,
   .contenedor_data {
     border-left: none;
-    margin: 5px 0;
+    margin: 2px 0;
+    background-color:yellow;
   }
 
   .datos_input {
     width: 100%;
     max-width: 100px;
-    font-size: 10px;
+    font-size: 9px;
   }
 
   .formingresos {
