@@ -516,6 +516,8 @@ form p {
     font-size: 10px; /* aún más pequeño */
     padding: 8px 4px;
     margin: 0;
+    color:black;
+    z-index:9999;
   }
 
   .Buscar {
