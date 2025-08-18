@@ -244,6 +244,7 @@ table tbody tr td {
     position:absolute;
     top:-20px;
     left:-65px;
+    color:black;
 }
 
 .contenedor_res{
@@ -252,7 +253,8 @@ table tbody tr td {
     border-left: 2px solid hsl(249, 78%, 26%);   
     position:absolute;
     top:7px;
-    left:-65px
+    left:-65px;
+    color:black
 }
 
 .contenedor_res1{
@@ -262,6 +264,7 @@ table tbody tr td {
     position:absolute;
     top:35px;
     left:-65px
+    color:balck;
 }
 
 
