@@ -308,7 +308,7 @@ table tbody tr td {
 
 .Table_BD {
     width: 94vw;
-    margin: 10px auto 0 auto;
+    margin: 20px auto 0 auto;
     height: auto; /* Evitar altura fija */
     overflow-x: auto; /* Scroll horizontal */
     overflow-y: auto;
