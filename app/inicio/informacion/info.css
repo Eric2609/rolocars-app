@@ -265,7 +265,7 @@ table tbody tr td {
     border-left: 2px solid hsl(249, 78%, 26%);
     position:absolute;
     top:35px;
-    left:-65px
+    left:-65px;
     color:balck;
     z-index:9998;
 }
