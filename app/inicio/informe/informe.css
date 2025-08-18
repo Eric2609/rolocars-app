@@ -188,7 +188,7 @@
   .formingresos {
     width: 100%;
     position: static;
-    margin-top: 15px;
+    margin-top: 5px;
   }
 
   .datos_inputs {
@@ -197,7 +197,7 @@
   }
 
   .Calculo {
-    width: 100%;
+    width: 50%;
     max-width: 180px;
     padding: 8px 0;
     font-size: 14px;
@@ -250,11 +250,11 @@
     font-size:10px
   }
   .Calculo {
-    width: 45vw;
-    max-width: 93vw;
+    width: 40vw;
+    max-width: 100px;
     padding: 6px 0;
     font-size: 12px;
-    display:inline-block;
+    display:inline;
   }
 
 
