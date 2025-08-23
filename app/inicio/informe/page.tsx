@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import './informe.css'
-import {Compra1, Venta1} from '@prisma/client'
+import {Compra1, Venta1,Producto} from '@prisma/client'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
@@ -15,27 +15,52 @@ function Informe() {
   const [totalEgresos, setTotalEgresos] = useState<number>(0)
   const [totalVentas, setTotalVentas] = useState<number>(0)
 
-  // Obtener datos y calcular costo total inventario
-  const fetchData = async () => {
-    try {
-      const resVentas = await axios.get('/api/ventas')
-      const resCompras = await axios.get('/api/compras')
+  const [productos, setProductos] = useState<Producto[]>([]);
+  const [producto, setProducto] = useState<Producto>({
+    Id_Producto: 0,
+    Producto: '',
+    Descripcion: '',
+    Precio_Compra: 0,
+    Precio_Venta: 0,
+    Stock: 0,
+  }); 
 
-      if (resVentas?.data) setVentas(resVentas.data)
-      if (resCompras?.data) {
-        setCompras(resCompras.data)
+   const GetProductos = async () => {
+     const res = await axios.get('/api/productos')
+       .catch((error) => {
+         console.log('catch: ', error.message);
+       });
+     if (res && res.data) {
+       setProductos(res.data);
+       /*console.log('GetProductos->res.data: ', res.data);*/
+     }
+   };
+   useEffect(() => {
+     GetProductos();
+   }, []);
 
-        // Cálculo del costo total del inventario (suma de compras)
-        const sumaTotal = resCompras.data.reduce(
-          (total: number, compra: Compra1) => total + compra.Total,
-          0
-        )
-        setCostoInventario(sumaTotal)
-      }
-    } catch (error) {
-      console.error('Error al obtener datos:', error)
+
+const fetchData = async () => {
+  try {
+    const resVentas = await axios.get('/api/ventas')
+    if (resVentas?.data) setVentas(resVentas.data)
+
+    const resProductos = await axios.get('/api/productos')
+    if (resProductos?.data) {
+      setProductos(resProductos.data)
+
+      const costoTotal = resProductos.data.reduce(
+        (total: number, producto: Producto) =>
+          total + parseFloat(String(producto.Precio_Compra)) * producto.Stock,
+        0
+      )
+      setCostoInventario(costoTotal)
     }
+  } catch (error) {
+    console.error('Error al obtener datos:', error)
   }
+}
+
 
   useEffect(() => {
     fetchData()
