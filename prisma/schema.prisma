@@ -49,5 +49,7 @@ model Compra1 {
   Stock        Int
   Fecha        DateTime
   Total        Int
+  Proveedor    String?  
+  Saldo        Int?    
   Usuario      User     @relation(fields: [id_Usuario], references: [id_User])
 }

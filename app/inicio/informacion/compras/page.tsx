@@ -9,9 +9,12 @@ import axios from 'axios';
 import '../../../../src/app/globals.css'
 
 
+
 function Compras() {
-  const [showWarning, setShowWarning] = useState(false);
+  const [showWarning, setShowWarning] = useState(true);
   const [activation,setActivation]=useState(false);
+  const [inputUserModal, setInputUserModal] = useState('');
+
 
   const [selectUser, setSelectUser] = useState<User | null>(null);
   const [productos, setProductos] = useState<Producto[]>([]);
@@ -30,7 +33,6 @@ function Compras() {
       });
     if (res && res.data) {
       setProductos(res.data);
-      /*console.log('GetProductos->res.data: ', res.data);*/
     }
   };
   useEffect(() => {
@@ -66,6 +68,8 @@ function Compras() {
     Stock:0,
     Fecha: new Date(),
     Total:0,
+    Proveedor:'',
+    Saldo:0
   });
   const GetCompras = async () => {
     const res = await axios.get('/api/compras')
@@ -74,8 +78,6 @@ function Compras() {
       });
     if (res && res.data) {
       setCompras(res.data);
-
-      //const sortedCompras = res.data.sort((a, b) => b.id_Compra - a.id_Compra);
       const sortedCompras = res.data.sort((a: Compra1, b: Compra1) => b.id_Compra - a.id_Compra);
       setCompras(sortedCompras);
 
@@ -85,7 +87,7 @@ function Compras() {
   };
   useEffect(() => {
     GetCompras();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+   
   }, []);
 
    const ror='admin'
@@ -115,12 +117,15 @@ function Compras() {
         Stock: parseInt(compra.Stock.toString()),
         Fecha: new Date(compra.Fecha),
         Total: compra.Total,
+        Proveedor: compra.Proveedor ?? '',  // <--- agregado
+        Saldo: compra.Saldo ?? 0  
 
       });
       if (resp && resp.data) {
         handleProductUpdate(compra)
       
         GetCompras();
+        ResetCompras()
       
       }
     } catch (error) {
@@ -130,46 +135,13 @@ function Compras() {
 
 
   const ResetCompras = () => {
-    setCompra(prevState => ({ ...prevState, id_Compra: 0,id_Usuario:0,Producto:'', Descripcion:'',Precio_Costo:0,Precio_Venta:0,Stock:0,Fecha:new Date(),Total:0}));
+    setCompra(prevState => ({ ...prevState, id_Compra: 0,id_Usuario:0,Producto:'', Descripcion:'',Precio_Costo:0,Precio_Venta:0,Stock:0,Fecha:new Date(),Total:0,Proveedor:'',Saldo:0}));
+    setUser(prevState =>({...prevState,id_User:0,User:'',Password:'',Rol:''}))
   }
   const ResetProducto = () => {
     setProducto(prevState => ({ ...prevState, Id_Producto: 0, Producto: '', Descripcion: '', Precio_Compra: 0, Precio_Venta: 0, Stock: 0 }));
   }
 
-  
-
-
-
-
-/*
-  const handleProductUpdate = async (compra: Compra1) => {
-    const existingProduct = productos.find(p => p.Producto === compra.Producto);
-    if (!existingProduct) {
-      const venta= compra.Precio_Venta
-      try {
-        const resp = await axios.post('/api/productos', {
-          Producto: compra.Producto,
-          Descripcion: compra.Descripcion,
-          Precio_Compra:  parseInt(compra.Precio_Costo.toString()),
-          Precio_Venta: parseInt(compra.Precio_Venta.toString()),
-          Stock: parseInt(compra.Stock.toString()),
-        });
-        if (resp && resp.data) {
-          console.log('Producto agregado:', resp.data);
-          GetProductos(); 
-        }
-        ResetProducto(); 
-      } catch (error) {
-        console.error('Error al agregar el producto:', error);
-      }
-    } else {
-      const exiProduc = productos.find(p => p.Producto === compra.Producto);
-      const newVenta=(exiProduc.Precio_Venta+parseInt(compra.Precio_Venta))/2
-      const newCosto=(exiProduc.Precio_Compra+parseInt(compra.Precio_Costo))/2
-      const upStock=exiProduc.Stock+parseInt(compra.Stock)
-      await UpdateProducto(exiProduc.Id_Producto,exiProduc.Producto,exiProduc.Descripcion,newVenta,newCosto,upStock)
-    }
-  };*/
 
 
 const handleProductUpdate = async (compra: Compra1) => {
@@ -195,7 +167,6 @@ const handleProductUpdate = async (compra: Compra1) => {
       console.error('Error al agregar el producto:', error);
     }
   } else {
-    // Para evitar error de asignación, usa ?? '' para dar valor por defecto string vacío
     const productoSeguro = existingProduct.Producto ?? '';
     const descripcionSeguro = existingProduct.Descripcion ?? '';
 
@@ -259,7 +230,8 @@ const handleProductUpdate = async (compra: Compra1) => {
     : new Date().toISOString().split('T')[0],
 
       Total:compra.Total,
-
+      Proveedor: compra.Proveedor ?? '',  
+      Saldo: compra.Saldo ?? 0  
     });
     if (resp && resp.data) {
       console.log('UpdateCompras->resp.data: ', resp.data);
@@ -274,7 +246,6 @@ const handleProductUpdate = async (compra: Compra1) => {
 }
 
   const EditCompras = async (compraId: number) => {
-    setShowWarning(true);
     const productFound = compras.find(compra => compra.id_Compra === compraId);
     console.log('capatamos tus datos')
     if (productFound) {
@@ -360,20 +331,22 @@ const handleUserChange = (e: ChangeEvent<HTMLInputElement>) => {
   setUser((prevUser) => ({ ...prevUser, User: value }));
 };
 
-const handleEditConfirmation = async (e:SyntheticEvent) => {
-  e.preventDefault()
-  const inputUser=e.target as HTMLInputElement;
-  const inputValu=inputUser.value
-  const userValid=users.find(usuario=>usuario.User===inputValu)
-  if (userValid?.Rol==='admin'){
 
-    setActivation(true);
-    setSelectUser(userValid);
-  // Oculta mensaje 
-    DeleteCompras(eliminar)
-    setShowWarning(false); 
+const handleEditConfirmation = (e: ChangeEvent<HTMLInputElement>) => {
+  const inputValu = e.target.value;
+  const userValid = users.find(usuario => usuario.User === inputValu);
+
+  if (userValid?.Rol.toLowerCase() === 'admin') {
+    setActivation(true); // habilita todas las funciones
+    setShowWarning(false); // cierra el modal
+    setSelectUser(userValid); // guarda el usuario
+  } else {
+    alert('Usuario no autorizado');
+    setActivation(false);
   }
 };
+
+
 
   const cancel=()=>{
     setShowWarning(false)
@@ -387,8 +360,16 @@ const handleEditConfirmation = async (e:SyntheticEvent) => {
     Stock: 0,
     Fecha: new Date(),
     Total: 0,
+    Proveedor:'',
+    Saldo:0
   });
+      window.location.href = '/inicio';
   }
+
+
+
+
+
 
 function formatDateToLocalYYYYMMDD(date: Date): string {
   const year = date.getFullYear();
@@ -443,36 +424,33 @@ function formatDateToLocalYYYYMMDD(date: Date): string {
                   <label className='label' htmlFor="">Stock</label>
                   <input className='input_Form' onChange={HandleChange} value={compra.Stock} type="number" name="Stock" placeholder="Stock" />
                   <label className='label' htmlFor="fecha">Fecha</label>
-                  <input
-                    className='input_Form'
-                    type="date"
-                    name="Fecha"
-
-value={
-  compra.Fecha instanceof Date && !isNaN(compra.Fecha.getTime())
-    ? formatDateToLocalYYYYMMDD(compra.Fecha)
-    : ''
-}
-
-onChange={(e) =>
-  setCompra(prev => ({
-    ...prev,
-    Fecha: new Date(`${e.target.value}T12:00:00`)
-  }))
-}
-
-
-                  />
+                  <input className='input_Form' type="date" name="Fecha"
+                    value={
+                      compra.Fecha instanceof Date && !isNaN(compra.Fecha.getTime())
+                        ? formatDateToLocalYYYYMMDD(compra.Fecha)
+                        : ''}
+                    onChange={(e) =>
+                      setCompra(prev => ({
+                      ...prev,
+                      Fecha: new Date(`${e.target.value}T12:00:00`)
+                      }))
+                    }
+                 />
                   <label className='label' htmlFor="">total</label>
                   <input className='input_Form' onChange={HandleChange} readOnly value={compra.Total} type="number" name="Total" placeholder="Total" />
+                  <label className='label' htmlFor="">Proveedor</label>
+                  <input className='input_Form' onChange={HandleChange} value={compra.Proveedor ?? ''} type="text" name="Proveedor" placeholder="Proveedor"/>
+
+                  <label className='label' htmlFor="">Saldo</label>
+                  <input className='input_Form' onChange={HandleChange} value={compra.Saldo ?? 0} type="number" name="Saldo" placeholder="Saldo"/>         
+                           
                   <div style={{ marginTop: "5px" }}>
                   <button className='button_crear' onClick={addCompras}>Nueva Compra</button>
                   </div>
 
-                  {/*<div style={{ marginTop: "5px" }}>
-                    <button className='button_actualizar' onClick={UpdateCompras}>Actualizar Compra</button>
-                  </div>*/}
-
+                  <div style={{ marginTop: "5px" }}>
+                    <button className='button_crear' onClick={UpdateCompras}>Actualizar Compra</button>
+                  </div>
                 </form>
               </div>
               <div className='Table_BD'>
@@ -488,7 +466,9 @@ onChange={(e) =>
                     <th>Stock</th>
                     <th>Fecha</th>
                     <th>Total</th>
-                    {/*<th>Acciones</th>*/}           
+                    <th>Proveedor</th>
+                    <th>Saldo</th>
+                    <th>Acciones</th>           
                   </tr>
                 </thead>
                 <tbody >
@@ -503,9 +483,11 @@ onChange={(e) =>
                       <td>{compra.Stock}</td>
                       <td>{new Date(compra.Fecha).toLocaleDateString()}</td>
                       <td>{compra.Total}</td>
+                      <td>{compra.Proveedor ?? ''}</td>
+                      <td>{compra.Saldo ?? 0}</td>
                       <td>
-                        {/*<button onClick={() => EditCompras(compra.id_Compra)} className='button_Edit' >Editar</button>
-                       <button onClick={() => DeleteCompras(compra.id_Compra)} className='button_Delete' >Eliminar</button>*/}
+                        <button onClick={() => EditCompras(compra.id_Compra)} className='button_Edit' >Editar</button>
+                    {/*   <button onClick={() => DeleteCompras(compra.id_Compra)} className='button_Delete' >Eliminar</button>*/}
                       </td>
                     </tr>
                   ))}
@@ -515,15 +497,43 @@ onChange={(e) =>
           </div>
 
 
-          {showWarning && (
-        <div className="warning-modal">
-          <p>¿ingrese su usuario para editar esta compra?</p>
-          <input type="text" id='User' name='User' placeholder='User' onChange={handleEditConfirmation}/>
-          <button onClick={cancel}> <strong>X</strong> </button>
-        </div>
-      )}
+{showWarning && (
+  <div className="warning-modal">
+    <p>Ingrese su usuario para editar esta compra</p>
+    <input
+      type="text"
+      id="User"
+      name="User"
+      placeholder="Usuario"
+      value={inputUserModal}
+      onChange={(e) => setInputUserModal(e.target.value)}
+    />
+    <button onClick={() => {
+      const userValid = users.find(u => u.User === inputUserModal);
+      if (userValid?.Rol.toLowerCase() === 'admin') {
+        setActivation(true);      // habilita edición
+        setShowWarning(false);    // cierra modal
+        setSelectUser(userValid); // guarda usuario
+      } else {
+        alert('Usuario no autorizado');
+        setActivation(false);
+        setInputUserModal('');   // limpia input
+      }
+    }}>
+      Confirmar
+    </button>
+
+    <button onClick={cancel}><strong>X</strong></button>
+  </div>
+)}
+
+
+
+
+
+
+
     </div>
   )
 }
 export default Compras
-

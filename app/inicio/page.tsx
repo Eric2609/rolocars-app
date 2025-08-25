@@ -15,7 +15,7 @@ function Inventario() {
 
   useEffect(() => {
     fetchData()
-  }, []) // ✅ solo una vez
+  }, []) 
 
   const fetchData = async () => {
     try {
