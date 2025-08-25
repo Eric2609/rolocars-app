@@ -356,7 +356,8 @@ table tbody tr td {
     position:absolute;
     top:40vh;
     left:37vw;
-    border-radius:10px
+    border-radius:10px;
+    z-index:10000;
 }
 
 .warning-modal p{
