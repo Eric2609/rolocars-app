@@ -350,9 +350,9 @@ table tbody tr td {
     top: 0px;
 }
 .warning-modal{
-    background:gray;
+    background:white;
     width:26vw;
-    height:20vh;
+    height:50vh;
     position:absolute;
     top:40vh;
     left:37vw;
