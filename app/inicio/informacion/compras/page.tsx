@@ -446,11 +446,13 @@ function formatDateToLocalYYYYMMDD(date: Date): string {
                            
                   <div style={{ marginTop: "5px" }}>
                   <button className='button_crear' onClick={addCompras}>Nueva Compra</button>
+                  <button className='button_crear' onClick={UpdateCompras}>Actualizar Compra</button>
+  
                   </div>
 
-                  <div style={{ marginTop: "5px" }}>
+                  {/*   <div style={{ marginTop: "5px" }}>
                     <button className='button_crear' onClick={UpdateCompras}>Actualizar Compra</button>
-                  </div>
+                  </div>*/}
                 </form>
               </div>
               <div className='Table_BD'>
