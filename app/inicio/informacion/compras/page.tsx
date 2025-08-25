@@ -510,7 +510,7 @@ function formatDateToLocalYYYYMMDD(date: Date): string {
       value={inputUserModal}
       onChange={(e) => setInputUserModal(e.target.value)}
     />
-    <button onClick={() => {
+    <button className='confirmacion' onClick={() => {
       const userValid = users.find(u => u.User === inputUserModal);
       if (userValid?.Rol.toLowerCase() === 'admin') {
         setActivation(true);      // habilita edición
