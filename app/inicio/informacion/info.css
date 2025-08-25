@@ -371,8 +371,15 @@ table tbody tr td {
     color:white;
     padding:1px 5px;
     border-radius:3px ;
-
 }
+.confirmacion{
+    background:hsl(249, 78%, 26%);
+    color:white;
+    padding:1px 5px;
+    border-radius:3px ;
+    ´position:absolute;
+    top:5px;
+    right:30px;
 
 }
 
