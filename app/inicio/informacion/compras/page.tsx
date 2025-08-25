@@ -522,7 +522,7 @@ function formatDateToLocalYYYYMMDD(date: Date): string {
         setInputUserModal('');   // limpia input
       }
     }}>
-      O
+      Confirmar
     </button>
 
     <button onClick={cancel}><strong>X</strong></button>
